@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     async function getWeatherData(){
         const city=inputCity.value.trim();
         if(city==="")return;
-        const url=`http://api.weatherapi.com/v1/current.json?key=6fd3d84453c24f49a7484810261801&q=${city}&aqi=yes`;
+        const url=import.meta.env.VITE_API_KEY;
         try{
             const response = await fetch(url);
             if(!response.ok){
