@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const cityTemp=document.getElementById('city-temp');
     const cityCondition=document.getElementById('city-desc');
 
-    const API_Key= "6fd3d84453c24f49a7484810261801";
+    const API_Key= `abcd123`;
     getWeatherbtn.addEventListener('click',()=>{
         getWeatherData();
     })
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     async function getWeatherData(){
         const city=inputCity.value.trim();
         if(city==="")return;
-        const url=import.meta.env.VITE_API_KEY;
+        const url=`http://api.weatherapi.com/v1/current.json?key=6fd3d84453c24f49a7484810261801&q=${city}&aqi=yes`;
         try{
             const response = await fetch(url);
             if(!response.ok){
